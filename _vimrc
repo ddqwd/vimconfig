@@ -42,8 +42,8 @@ endfunction
 
 colorscheme evening
 set guifont=新宋体:h15:cGB2312:qDRAFT
-au TextChanged *.go,*.cpp,*.c,*md w
-au InsertLeavePre *.go,*.cpp,*.c,*md w
+"au TextChanged *.go,*.cpp,*.c,*md w
+"au InsertLeavePre *.go,*.cpp,*.c,*md w
 set nu
 set nobackup
 
@@ -55,17 +55,34 @@ set shiftwidth=4
 
 let is_win32= has('win32')
 let is_unix = has('unix')
+" unix download
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-if is_win32
-	let PLUG = expand("$VIMRUNTIME/autoload/plug.vim")
+"windows download
+" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force
+" must install python3.11
+" https://www.python.org/
+"
+if is_unix
+let PLUG = expand("$HOME/.vim/autoload/plug.vim")
 else
-	let PLUG = expand("$HOME/.vim/autoload/plug.vim")
+	if is_win32
+		let PLUG = expand("$HOME/vimfiles/autoload/plug.vim")
+	else
+		echo "unkonwn platform"
+	endif
 endif
+
 if !filereadable(PLUG)
 	echo "vim-plug is not installed " . PLUG 
 else
 	call plug#begin()
-		"Plug 'SirVer/ultisnips'
-		 
+		Plug 'SirVer/ultisnips'|  Plug 'honza/vim-snippets'
+		Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 	call plug#end()
 endif
+
+
+"autocmd VimEnter * NERDTree
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
