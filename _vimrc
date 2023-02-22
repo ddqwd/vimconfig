@@ -73,6 +73,12 @@ set termguicolors
 "	endif
 "endif
 
+
+if is_unix
+set dict+=/usr/share/dict/words
+endif
+
+
 call plug#begin()
 	Plug 'SirVer/ultisnips'|  Plug 'honza/vim-snippets'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
