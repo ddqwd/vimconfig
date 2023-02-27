@@ -99,6 +99,9 @@ call plug#begin()
 	
 call plug#end()
 
+"cpp setting
+set path+=../../**/include/**
+
 
 "colo
 "colo one
