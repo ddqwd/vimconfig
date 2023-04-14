@@ -56,6 +56,10 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set termguicolors
+set laststatus=2
+set stl=%F\ %m
+set stl+=\ %y
+set stl+=\ %P
 " unix download
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "windows download
