@@ -84,6 +84,7 @@ endif
 
 
 call plug#begin()
+	Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 	Plug 'SirVer/ultisnips'|  Plug 'honza/vim-snippets'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 	Plug 'lervag/vimtex'
