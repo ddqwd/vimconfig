@@ -1,4 +1,4 @@
-
+set pythonthreehome=C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python311-32
 
 let is_unix = has('unix')
 let is_gui_win32 = has('gui_win32')
@@ -6,6 +6,9 @@ if is_gui_win32
 	" Vim with all enhancements
 	source $VIMRUNTIME/vimrc_example.vim
 endif
+
+
+
 function MyDiff()
   let opt = '-a --binary '
   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
@@ -46,6 +49,20 @@ if is_gui_win32
 	endif
 	set guifont=新宋体:h15:cGB2312:qDRAFT
 endif
+
+
+
+let filesuffix=fnamemodify(bufname("%"), ":t")
+
+
+"" YouCompleteMe
+let g:ycm_key_list_previous_completion=['<Up>']
+
+"" Ultisnips
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsListSnippets="<c-s-tab>"
+
+
 colorscheme evening
 "au TextChanged *.go,*.cpp,*.c,*md w
 "au InsertLeavePre *.go,*.cpp,*.c,*md w
@@ -113,6 +130,8 @@ set path+=../../**/include/**
 colo nord
 "colo oceanic-next
 
+set ignorecase
+set smartcase
 "encode
 "
 set encoding=utf-8
@@ -125,3 +144,12 @@ nmap <F8> :TagbarToggle<CR>
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+let g:airline_theme='base16_ashes'
+let g:airline#extensions#tabline#enabled = 1
+"Use <F5> insert current date
+" see link : https://vim.fandom.com/wiki/Insert_current_date_or_time
+:nnoremap <F5> "=strftime("%c")<CR>P
+:inoremap <F5> <C-R>=strftime("%c")<CR>
+
+
