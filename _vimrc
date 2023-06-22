@@ -78,6 +78,7 @@ set laststatus=2
 set stl=%F\ %m
 set stl+=\ %y
 set stl+=\ %P
+set backspace=indent,eol,start
 " unix download
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "windows download
@@ -112,9 +113,9 @@ call plug#begin()
 	Plug 'mhartington/oceanic-next'
 	Plug 'rakr/vim-one'
 	Plug 'arcticicestudio/nord-vim'
-    Plug 'tomasr/molokai'
+        Plug 'tomasr/molokai'
 	Plug 'altercation/vim-colors-solarized'
-	" https://github.com/ycm-core/YouCompleteMe
+	"https://github.com/ycm-core/YouCompleteMe
 	"Plug 'ycm-core/YouCompleteMe'
 
 "	Plug 'godlygeek/tabular'
