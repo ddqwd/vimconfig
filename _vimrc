@@ -74,19 +74,7 @@ set backspace=indent,eol,start
 " unix download
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "windows download
-" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force
-" must install python3.11
-" https://www.python.org/
-"
-"if is_unix
-"let PLUG = expand("$HOME/.vim/autoload/plug.vim")
-"else
-"	if is_win32
-"		let PLUG = expand("$HOME/vimfiles/autoload/plug.vim")
-"	else
-"		echo "unkonwn platform"
-"	endif
-"endif
+" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force 
 
 
 if is_unix
