@@ -50,11 +50,7 @@ if is_gui_win32
 	set guifont=新宋体:h15:cGB2312:qDRAFT
 endif
 
-
-
 let filesuffix=fnamemodify(bufname("%"), ":t")
-
- 
 
 colorscheme evening
 "au TextChanged *.go,*.cpp,*.c,*md w
@@ -76,11 +72,9 @@ set backspace=indent,eol,start
 "windows download
 " iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force 
 
-
 if is_unix
 set dict+=/usr/share/dict/words
 endif
-
 
 call plug#begin()
 	Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
@@ -103,15 +97,6 @@ call plug#begin()
 	
 call plug#end()
 
-"cpp setting
-set path+=../../**/include/**
-
-
-"colo
-"colo one
-colo nord
-"colo oceanic-next
-
 set ignorecase
 set smartcase
 "encode
@@ -120,7 +105,6 @@ set encoding=utf-8
 
 "tarbar
 nmap <F8> :TagbarToggle<CR>
-
 
 "autocmd VimEnter * NERDTree
 
@@ -138,6 +122,18 @@ let g:airline#extensions#tabline#enabled = 1
 "" YouCompleteMe
 "let g:ycm_key_list_previous_completion=['<Up>']
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_clangd_binary_path = "/usr/bin/clangd"
+
+let mapleader=','
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkSpace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+nmap <leader>gi :YcmCompleter GoToInclude<CR>
+nmap <leader>gd :YcmCompleter GoToDeclaration<CR>
+nmap <leader>gf :YcmCompleter GoToDefinition<CR>
+nmap <leader>gp :YcmCompleter GoToImplementation<CR>
+nmap <leader>gc :YcmCompleter GoToCallers<CR>
+nmap <leader>gr :YcmCompleter GoToReferences<CR>
+
 
 
 " make YCM compatible with UltiSnips (using supertab)
