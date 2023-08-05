@@ -52,30 +52,6 @@ endif
 
 let filesuffix=fnamemodify(bufname("%"), ":t")
 
-colorscheme evening
-"au TextChanged *.go,*.cpp,*.c,*md w
-"au InsertLeavePre *.go,*.cpp,*.c,*md w
-set nu
-set nobackup
-set noundofile
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set termguicolors
-set laststatus=2
-set stl=%F\ %m
-set stl+=\ %y
-set stl+=\ %P
-set backspace=indent,eol,start
-" unix download
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"windows download
-" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force 
-
-if is_unix
-set dict+=/usr/share/dict/words
-endif
-
 call plug#begin()
 	Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 	Plug 'SirVer/ultisnips'|  Plug 'honza/vim-snippets'
@@ -90,7 +66,7 @@ call plug#begin()
         Plug 'tomasr/molokai'
 	Plug 'altercation/vim-colors-solarized'
 	"https://github.com/ycm-core/YouCompleteMe
-	"Plug 'ycm-core/YouCompleteMe'
+	Plug 'ycm-core/YouCompleteMe'
 
 "	Plug 'godlygeek/tabular'
 "	Plug 'preservim/vim-markdown'
@@ -144,3 +120,30 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
+
+
+
+
+colorscheme evening
+"au TextChanged *.go,*.cpp,*.c,*md w
+"au InsertLeavePre *.go,*.cpp,*.c,*md w
+set nu
+set nobackup
+set noundofile
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set termguicolors
+set laststatus=2
+set stl=%F\ %m
+set stl+=\ %y
+set stl+=\ %P
+set backspace=indent,eol,start
+" unix download
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"windows download
+" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force 
+
+if is_unix
+set dict+=/usr/share/dict/words
+endif
