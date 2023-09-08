@@ -70,6 +70,8 @@ call plug#begin()
 
 "	Plug 'godlygeek/tabular'
 "	Plug 'preservim/vim-markdown'
+
+	Plug 'tikhomirov/vim-glsl'  
 	
 call plug#end()
 
