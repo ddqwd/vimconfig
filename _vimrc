@@ -102,6 +102,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_clangd_binary_path = "/usr/bin/clangd"
 
+highlight YCMErrorLine guibg=black ctermbg=red
+
 let mapleader=','
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkSpace)
 nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
