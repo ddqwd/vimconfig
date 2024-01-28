@@ -1,4 +1,10 @@
-set pythonthreehome=C:\\Users\\xxx\\AppData\\Local\\Programs\\Python\\Python311-32
+
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+
+
+"|set pythonthreehome=
 
 let is_unix = has('unix')
 let is_gui_win32 = has('gui_win32')
@@ -52,11 +58,35 @@ endif
 
 let filesuffix=fnamemodify(bufname("%"), ":t")
 
+"au TextChanged *.go,*.cpp,*.c,*md w
+"au InsertLeavePre *.go,*.cpp,*.c,*md w
+set nu
+set nobackup
+set noundofile
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set termguicolors
+set laststatus=2
+set stl=%F\ %m
+set stl+=\ %y
+set stl+=\ %P
+set backspace=indent,eol,start
+" unix download
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"windows download
+" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force 
+
+if is_unix
+set dict+=/usr/share/dict/words
+endif
+
 call plug#begin()
 	Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 	Plug 'SirVer/ultisnips'|  Plug 'honza/vim-snippets'
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-	Plug 'lervag/vimtex'
+	"Plug 'lervag/vimtex'
 	Plug 'preservim/tagbar'
 	"coloscheme
 	Plug 'jacoborus/tender.vim'
@@ -67,12 +97,15 @@ call plug#begin()
 	Plug 'altercation/vim-colors-solarized'
 	"https://github.com/ycm-core/YouCompleteMe
 	Plug 'ycm-core/YouCompleteMe'
+    Plug 'vim-latex/vim-latex'
+
 
 "	Plug 'godlygeek/tabular'
 "	Plug 'preservim/vim-markdown'
+    Plug 'tikhomirov/vim-glsl'
+	Plug 'github/copilot.vim'
+"    Plug 'powerman/vim-plugin-viewdoc'
 
-	Plug 'tikhomirov/vim-glsl'  
-	
 call plug#end()
 
 set ignorecase
@@ -101,8 +134,11 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:ycm_key_list_previous_completion=['<Up>']
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_clangd_binary_path = "/usr/bin/clangd"
+"|let g:ycm_global_ycm_extra_conf = '~/Downloads/mesa-18.3.6/build_debug/compile_commands.json'
 
 highlight YCMErrorLine guibg=black ctermbg=red
+
+
 
 let mapleader=','
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkSpace)
@@ -113,6 +149,8 @@ nmap <leader>gf :YcmCompleter GoToDefinition<CR>
 nmap <leader>gp :YcmCompleter GoToImplementation<CR>
 nmap <leader>gc :YcmCompleter GoToCallers<CR>
 nmap <leader>gr :YcmCompleter GoToReferences<CR>
+nmap <leader>fi :YcmCompleter FixIt<CR>
+nmap <leader>ft :YcmCompleter Format<CR>
 
 
 
@@ -125,29 +163,70 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 
+colorscheme OceanicNext
+
+set mouse=r
+"set path+=/home/shiji/Downloads/mesa-18.3.6/**
+set path+=/home/shiji/mesa/src
+
+"alphsubs ---------------------- {{{
+        execute "digraphs ks " . 0x2096
+        execute "digraphs as " . 0x2090
+        execute "digraphs es " . 0x2091
+        execute "digraphs hs " . 0x2095
+        execute "digraphs is " . 0x1D62
+        execute "digraphs ks " . 0x2096
+        execute "digraphs ls " . 0x2097
+        execute "digraphs ms " . 0x2098
+        execute "digraphs ns " . 0x2099
+        execute "digraphs os " . 0x2092
+        execute "digraphs ps " . 0x209A
+        execute "digraphs rs " . 0x1D63
+        execute "digraphs ss " . 0x209B
+        execute "digraphs ts " . 0x209C
+        execute "digraphs us " . 0x1D64
+        execute "digraphs vs " . 0x1D65
+        execute "digraphs xs " . 0x2093
+"}}}
+"
+"  function! ClangFormatOnSave()
+"    " Only format files that have a .clang-format in a parent folder
+"    if !empty(findfile('.clang-format', '.;'))
+"      let l:formatdiff = 1 " Only format lines that have changed
+"      "py3f /usr/share/clang/clang-format.py
+"	  py3f /usr/share/clang/clang-format-7/clang-format.py
+"    endif
+"  endfunction
+"
+"  autocmd BufWritePre *.h,*.c,*.cc,*.cpp call ClangFormatOnSave()
+"augroup END
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='xelatex'
+let g:Tex_CompileRule_dvi='xelatex -interaction=nonstopmode -file-line-error-style "$*"'
+let g:Tex_IgnoreLevel=8
+"let g:Tex_IgnoredWarnings+='Package fontspec Warning'
+let g:Tex_GotoError=0
+
+nmap <leader>sfd :set foldmethod=syntax
+nmap <leader>sufd :set nofoldenable
+
+nmap <leader>pr oprintf( "the unanlaysis circumstance happend , need to handle : %s : %s : %d  
+\n", __FILE__, __func__, __LINE__
+);
+nmap <leader>pr1 oprintf(" %s %s %d: \n", __FILE__, __func__, __LINE__,
+);
+
+nmap <leader>sfd :set foldmethod=syntax
+nmap <leader>sufd :set nofoldenable
 
 
-
-colorscheme evening
-"au TextChanged *.go,*.cpp,*.c,*md w
-"au InsertLeavePre *.go,*.cpp,*.c,*md w
-set nu
-set nobackup
-set noundofile
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set termguicolors
-set laststatus=2
-set stl=%F\ %m
-set stl+=\ %y
-set stl+=\ %P
-set backspace=indent,eol,start
-" unix download
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"windows download
-" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $HOME/vimfiles/autoload/plug.vim -Force 
-
-if is_unix
-set dict+=/usr/share/dict/words
-endif
