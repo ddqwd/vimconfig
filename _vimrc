@@ -60,6 +60,7 @@ let filesuffix=fnamemodify(bufname("%"), ":t")
 
 "au TextChanged *.go,*.cpp,*.c,*md w
 "au InsertLeavePre *.go,*.cpp,*.c,*md w
+
 set hls
 set nu
 set nobackup
@@ -94,11 +95,12 @@ call plug#begin()
 	Plug 'mhartington/oceanic-next'
 	Plug 'rakr/vim-one'
 	Plug 'arcticicestudio/nord-vim'
+ 	Plug 'nordtheme/vim'
         Plug 'tomasr/molokai'
 	Plug 'altercation/vim-colors-solarized'
 	"https://github.com/ycm-core/YouCompleteMe
 	Plug 'ycm-core/YouCompleteMe'
-    Plug 'vim-latex/vim-latex'
+    	Plug 'vim-latex/vim-latex'
 
 
 "	Plug 'godlygeek/tabular'
