@@ -60,6 +60,7 @@ let filesuffix=fnamemodify(bufname("%"), ":t")
 
 "au TextChanged *.go,*.cpp,*.c,*md w
 "au InsertLeavePre *.go,*.cpp,*.c,*md w
+set hls
 set nu
 set nobackup
 set noundofile
