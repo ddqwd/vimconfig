@@ -36,3 +36,41 @@ Coccommand workspace.showoutput
 clangd --compile-dri =. -check=xx.cpp
 如果加载正常
 观察compile_commands.json是否在正确的路径上， 一般放到到根目录的路径上
+
+
+
+
+
+# Windows
+
+## 安装必要软件
+
+choco
+wsl 
+ubuntu22.04
+ripgrep
+clink
+autojump
+neovim
+win32yank (choco install win32yank)
+
+## windows terminal配置
+
+https://github.com/dahlbyk/posh-git
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
+```
+
+
+
+## neovim Coc-Install
+
+CocInstall coc-pyright
+CocInstall coc-clangd
+
+
+
+
+

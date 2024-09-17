@@ -1,4 +1,4 @@
-    set runtimepath^=~/.vim runtimepath+=~/.vim/after
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
     let &packpath = &runtimepath
     "source ~/.vimrc
     "
@@ -21,6 +21,8 @@ if is_gui_win32
 	source $VIMRUNTIME/vimrc_example.vim
 endif
 
+
+let g:editorconfig = v:false
 
 
 function MyDiff()
@@ -124,6 +126,7 @@ call plug#begin()
     "Plug 'cappyzawa/trim.nvim'
     "
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+    Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 
@@ -172,17 +175,46 @@ let mapleader=','
 "nmap <leader>ft :YcmCompleter Format<CR>
 
 
+"Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Add `:Fold` command to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
-nmap <silent> <leader>[g <Plug>(coc-diagnostic-prev)
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 
 " Remap keys for applying refactor code actions
 nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
 xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
 
 " Find symbol of current document
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
@@ -259,9 +291,9 @@ nmap <leader>sufd :set nofoldenable
 
 "nmap <leader>pr oprintf( "the unanlaysis circumstance happend , need to handle : %s : %s : %d  
 "\n", __FILE__, __func__, __LINE__
-");
+");
 "nmap <leader>pr1 oprintf(" %s %s %d: \n", __FILE__, __func__, __LINE__,
-");
+");
 
 nmap <leader>sfd :set foldmethod=syntax
 nmap <leader>sufd :set nofoldenable
@@ -341,3 +373,27 @@ set clipboard+=unnamedplus
 
 
 command! -nargs=+ GetCompileCommands lua print(vim.inspect(require('coc').getCompileCommands()))
+
+"Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>
+
+
+
+if has('python')
+  "map <C-K> :pyf <path-to-this-file>/clang-format.py<cr>
+  map <C-K> :pyf <path-to-this-file>/.clang-format<cr>
+  imap <C-K> <c-o>:pyf <path-to-this-file>/clang-format.py<cr>
+elseif has('python3')
+  map <C-K> :py3f <path-to-this-file>/clang-format.py<cr>
+  imap <C-K> <c-o>:py3f <path-to-this-file>/clang-format.py<cr>
+endif
