@@ -1,4 +1,9 @@
-﻿# vimconfig
+﻿
+
+
+
+
+# vimconfig
 [ctags](https://github.com/universal-ctags/ctags)
 
 [ctags_referece](https://docs.ctags.io/en/latest/man/ctags.1.html)
@@ -16,10 +21,20 @@
 [node](https://nodejs.org/en/download/)
 
 [git-vim](https://github.com/vim/vim.git)
-## vim-plugs ##
 
 [YCM](https://github.com/ycm-core/YouCompleteMe)
 
+[clang-power-tools](https://www.clangpowertools.com/)
+
+[clang-uml](https://github.com/bkryza/clang-uml)
+
+[java] (https://www.oracle.com/java/technologies/downloads/?er=221886#jdk23-windows)
+
+[graphviz](https://graphviz.org/download/)
+
+[plantuml jar](https://sourceforge.net/projects/plantuml.mirror/files/v1.2024.6/plantuml-1.2024.6.jar/download)
+[ccls]()
+[clangd]()
 
 
 # 关于coc ccls/clangd lsp插件配置
@@ -38,7 +53,19 @@ clangd --compile-dri =. -check=xx.cpp
 观察compile_commands.json是否在正确的路径上， 一般放到到根目录的路径上
 
 
+# Linux
 
+rigprep
+libgstreamer*
+inventor-dev
+libsdl2-dev
+gtk2
+Jasper
+
+
+## python包
+vtk
+tk
 
 
 # Windows
@@ -53,9 +80,14 @@ clink
 autojump
 neovim
 win32yank (choco install win32yank)
+git 升级git : `git update-git-for-windows`
+graphviz 
+java
+
 
 ## windows terminal配置
 
+### post-git
 https://github.com/dahlbyk/posh-git
 
 ```powershell
@@ -63,12 +95,40 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 ```
 
+### jump
 
+https://github.com/vors/ZLocation
 
+Install-Module ZLocation -Scope CurrentUser; Import-Module ZLocation; Add-Content -Value "`r`n`r`nImport-Module ZLocation`r`n" -Encoding utf8 -Path $PROFILE.CurrentUserAllHosts
+
+### powershell toys
+https://github.com/microsoft/PowerToys/releases/tag/v0.84.1
+
+### PSReadLine
+https://github.com/PowerShell/PSReadLine
+Install-Module -Name PowerShellGet -Force
 ## neovim Coc-Install
 
 CocInstall coc-pyright
 CocInstall coc-clangd
+
+
+
+## VisualStudio 插件配置
+
+### Clang Power Tools
+### VisualLint
+
+## plantuml jar包使用
+
+java -jar plantuml.jar -h 
+打印帮助信息
+
+java -jar plantuml.jar -tsvg xx.puml
+
+
+
+
 
 
 

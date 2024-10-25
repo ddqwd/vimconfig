@@ -1,0 +1,204 @@
+{
+    "QT_DEV_PATH" : "C:\\Qt5.15\\5.15.2\\msvc2019_64",
+    "repositories": {
+        "ps-app-cae-prepost-base"            : {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-base.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "base"
+        },
+        "ps-app-cae-prepost-caedata"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-caedata.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "caedata"
+        },
+
+        "ps-app-cae-prepost-caddata"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-caddata.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "caddata"
+        },
+        "ps-app-cae-prepost-psgui-data"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-psgui-data.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "psgui"
+        },
+
+        "ps-app-cae-prepost-cadcmd"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-cadcmd.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "caedata"
+        },
+
+        "ps-app-cae-prepost-caecmd"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-caecmd.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "caecmd"
+        },
+        "ps-app-cae-prepost-geom"         :  {
+            "url":"https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-geom.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "geom"
+        },
+        "ps-app-cae-prepost-geomtool"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-geomtool.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "geom"
+        },
+
+        "ps-app-cae-prepost-pscad-translator"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-pscad-translator.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "trans"
+        },
+        "ps-app-cae-prepost-pscad-interface"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-pscad-interface.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "interface"
+        },
+        "ps-app-cae-meshwrap"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-meshwrap.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "meshwrap"
+        },
+        "ps-app-cae-prepost-cadui"         :  {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-cadui.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "cadui"
+        },
+        "ps-app-cae-prepost"                 :  {
+
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "prepost"
+        },
+        "ps-app-cae-prepost-post"                 :  {
+
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-post.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "post"
+        },
+        "ps-app-cae-prepost-uicomponent"     : {
+            "url":"https://gl.poissonsoft.com/yf23002/ps-app-cae-prepost-uicomponent.git",
+            "branch": "dev/fea_pp",
+            "alias" : "uic"
+        },
+        "ps-app-cae-render"                  : {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-render.git",
+            "branch":"dev/fea_pp",
+            "alias" : "render"
+        },
+        "ps-app-cae-utest"                   : {
+            "url": "https://gl.poissonsoft.com/yf23002/ps-app-cae-utest.git",
+            "branch" : "dev/fea_pp",
+            "alias" : "utest"
+        },
+        "ps-app-cae-workspace"               : {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-workspace.git",
+            "branch" : "dev/fea_pp",
+            "alias": "workspace"
+        },
+        "ps-app-cae-workbench"               : {
+            "url" : "https://gl.poissonsoft.com/yf23002/ps-app-cae-workbench.git",
+            "branch" : "dev/fea_pp",
+            "alias": "workbench"
+        }
+
+    },
+    "actions": {
+        "clone": [
+            "ps-app-cae-prepost-base",
+            "ps-app-cae-prepost-uicomponent",
+            "ps-app-cae-prepost-caedata",
+            "ps-app-cae-prepost-caddata",
+            "ps-app-cae-prepost-geom",
+            "ps-app-cae-prepost-geomtool",
+            "ps-app-cae-prepost-pscad-translator",
+            "ps-app-cae-prepost-pscad-interface",
+            "ps-app-cae-prepost-caecmd",
+            "ps-app-cae-prepost-cadcmd",
+            "ps-app-cae-render",
+            "ps-app-cae-prepost-psgui-data",
+            "ps-app-cae-meshwrap",
+            "ps-app-cae-prepost-post",
+            "ps-app-cae-prepost-cadui",
+            "ps-app-cae-workspace",
+            "ps-app-cae-workbench"
+        ],
+        "pull": [
+            "ps-app-cae-prepost-base",
+            "ps-app-cae-prepost-uicomponent",
+            "ps-app-cae-prepost-caedata",
+            "ps-app-cae-prepost-caddata",
+            "ps-app-cae-prepost-geom",
+            "ps-app-cae-prepost-caecmd",
+            "ps-app-cae-prepost-cadcmd",
+            "ps-app-cae-render",
+            "ps-app-cae-prepost-psgui-data",
+            "ps-app-cae-meshwrap",
+            "ps-app-cae-prepost-post",
+            "ps-app-cae-prepost-cadui",
+            "ps-app-cae-workspace",
+            "ps-app-cae-workbench"
+        ],
+        "status": [
+            "ps-app-cae-prepost-base",
+            "ps-app-cae-prepost-uicomponent",
+            "ps-app-cae-prepost-caedata",
+            "ps-app-cae-prepost-caddata",
+            "ps-app-cae-prepost-geom",
+            "ps-app-cae-prepost-caecmd",
+            "ps-app-cae-prepost-cadcmd",
+            "ps-app-cae-render",
+            "ps-app-cae-prepost-psgui-data",
+            "ps-app-cae-meshwrap",
+            "ps-app-cae-prepost-post",
+            "ps-app-cae-prepost-cadui",
+            "ps-app-cae-workspace",
+            "ps-app-cae-workbench"
+        ],
+        "checkout": {
+            "ps-app-cae-prepost-base":"dev/fea_pp",
+            "ps-app-cae-prepost-uicomponent":"dev/fea_pp",
+            "ps-app-cae-prepost-caedata":"dev/fea_pp",
+            "ps-app-cae-prepost-caddata":"dev/fea_pp",
+            "ps-app-cae-prepost-geom" : "dev/fea_pp",
+            "ps-app-cae-prepost-caecmd":"dev/fea_pp",
+            "ps-app-cae-prepost-cadcmd":"dev/fea_pp",
+            "ps-app-cae-render":"dev/fea_pp",
+            "ps-app-cae-prepost-psgui-data":"dev/fea_pp",
+            "ps-app-cae-meshwrap":"dev/fea_pp",
+            "ps-app-cae-prepost-post":"dev/fea_pp",
+            "ps-app-cae-prepost-cadui":"dev/fea_pp",
+            "ps-app-cae-workspace":"dev/fea_pp",
+            "ps-app-cae-workbench":"dev/fea_pp"
+        },
+        "build": [
+            "ps-app-cae-prepost-base",
+            "ps-app-cae-prepost-uicomponent",
+            "ps-app-cae-prepost-caedata",
+            "ps-app-cae-prepost-caddata",
+            "ps-app-cae-prepost-geom",
+            "ps-app-cae-prepost-caecmd",
+            "ps-app-cae-prepost-cadcmd",
+            "ps-app-cae-render",
+            "ps-app-cae-prepost-psgui-data",
+            "ps-app-cae-meshwrap",
+            "ps-app-cae-prepost-post",
+            "ps-app-cae-prepost-cadui",
+            "ps-app-cae-workspace",
+            "ps-app-cae-workbench"
+        ]
+
+    },
+    "group" : {
+            "ps-app-cae-prepost-base": "group/fea_pub_b03",
+            "ps-app-cae-prepost-uicomponent": "group/fea_pub_b03",
+            "ps-app-cae-prepost-caedata": "group/fea_pub_b03",
+            "ps-app-cae-prepost-caecmd": "group/fea_pub_b03",
+            "ps-app-cae-prepost-psgui-data": "group/fea_pub_b03",
+            "ps-app-cae-prepost-post": "group/fea_pub_b03",
+            "ps-app-cae-workspace": "group/fea_pub_b03",
+            "ps-app-cae-workbench": "group/fea_pub_b03"
+    }
+}
+
