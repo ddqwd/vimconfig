@@ -74,7 +74,8 @@ echo "export PATH=/usr/local/bin:$PATH" >> .bashrc
 
 .bashrc
 
-sudo apt install nodejs npm
+[sudo apt install nodejs npm](https://nodejs.org/en/download) 下载最新的node 
+
 
 
 ## python包
