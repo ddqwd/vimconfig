@@ -63,11 +63,18 @@ gtk2
 Jasper
 cmake
 gettext
+
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 git clone https://github.com/neovim/neovim.git
+
 make && sudo make install 
+
 echo "export PATH=/usr/local/bin:$PATH" >> .bashrc
+
 .bashrc
+
+sudo apt install nodejs npm
 
 
 ## python包
