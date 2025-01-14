@@ -397,3 +397,4 @@ elseif has('python3')
   map <C-K> :py3f <path-to-this-file>/clang-format.py<cr>
   imap <C-K> <c-o>:py3f <path-to-this-file>/clang-format.py<cr>
 endif
+

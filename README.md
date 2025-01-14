@@ -33,6 +33,8 @@
 [graphviz](https://graphviz.org/download/)
 
 [plantuml jar](https://sourceforge.net/projects/plantuml.mirror/files/v1.2024.6/plantuml-1.2024.6.jar/download)
+
+[everything es](https://www.voidtools.com/zh-cn/downloads/)
 [ccls]()
 [clangd]()
 
@@ -76,9 +78,15 @@ echo "export PATH=/usr/local/bin:$PATH" >> .bashrc
 
 [sudo apt install nodejs npm](https://nodejs.org/en/download) 下载最新的node 
 
+autojump
 
+##  安装FSearch
+
+sudo add-apt-repository ppa:christian-boxdoerfer/fsearch-stable
+sudo apt install fsearch
 
 ## python包
+
 vtk
 tk
 
@@ -98,6 +106,9 @@ win32yank (choco install win32yank)
 git 升级git : `git update-git-for-windows`
 graphviz 
 java
+everything [es]
+
+
 
 
 ## windows terminal配置
@@ -142,9 +153,21 @@ java -jar plantuml.jar -h
 java -jar plantuml.jar -tsvg xx.puml
 
 
+## windows11 scripts
+```
 
 
 
+
+
+
+
+
+
+
+
+
+```
 
 
 
