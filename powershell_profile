@@ -1,0 +1,61 @@
+function prompt {
+    $currentPath = Get-Location
+    $Host.UI.RawUI.WindowTitle = $currentPath
+    "$currentPath> "
+}
+
+function Start-AdminShell {
+    Start-Process powershell -Verb runAs
+}
+function gt {
+    git status
+}
+
+function gpl {
+    git pull --rebase
+}
+function cre {
+    cd d:\test_repo\
+}
+function cgui {
+    cd D:\test_repo\ps-app-cae-prepost-psgui-data\
+}
+function pbd {
+    python repo_manager.py --build debug 
+}
+function cbase {
+    cd D:\test_repo\ps-app-cae-prepost-base\
+}
+
+function cdata {
+    cd D:\test_repo\ps-app-cae-prepost-caedata\
+}
+
+function ccmd {
+    cd D:\test_repo\ps-app-cae-prepost-caecmd\
+}
+
+function cws{
+    cd D:\test_repo\ps-app-cae-workspace\
+}
+
+function cbench{
+    cd D:\test_repo\ps-app-cae-workbench\
+}
+#function es {
+#    param (
+#        [string]$path = $pwd
+#        [string]$extension = ".exe"
+#    )
+#    es -path $path $extension
+#}
+#Set-alias -name "gt" -value "git.exe status"
+#Set-alias -name "gcmt" -value "git.exe commit -m"
+#Set-alias -name "ga" -value "git add -u"
+#Set-alias -name "gpl" -value "git pull"
+#Set-alias -name "gpr" -value "git pull --rebase"
+
+#set-alias -name "ese" -value "get-childitem -recurse | where-object { $_.extension -eq '.exe' } | select-object -property name, directory"
+
+Import-Module posh-git
+
