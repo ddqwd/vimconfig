@@ -1,0 +1,40 @@
+{
+  "payload": {
+    "name": "shiji_yu@qq.com",
+    "email": "shiji_yu@qq.com",
+    "licenses": [
+      {
+        "id": "96-B885-9080-8D",
+        "owner": "shiji_yu@qq.com",
+        "product_id": "IDAFREE",
+        "edition_id": "ida-free",
+        "description": "IDA Free PC",
+        "start_date": "2025-02-22",
+        "end_date": "2026-02-22",
+        "issued_on": "2025-02-22 08:55:44",
+        "license_type": "named",
+        "seats": 1,
+        "add_ons": [
+          {
+            "id": "97-455B-D06D-AE",
+            "code": "HEXCX64",
+            "owner": "96-B885-9080-8D",
+            "start_date": "2025-02-22",
+            "end_date": "2026-02-22"
+          },
+          {
+            "id": "97-C5AB-B5C2-63",
+            "code": "HEXCX86",
+            "owner": "96-B885-9080-8D",
+            "start_date": "2025-02-22",
+            "end_date": "2026-02-22"
+          }
+        ]
+      }
+    ]
+  },
+  "header": {
+    "version": 1
+  },
+  "signature": "F0656A6163AD1F7297CD86B36B506518A5D06E2F3DD996533870917FF5F012188FBE5AF0B0EAB98F74DD3A526639ED296B8A3F43E03E75E9F130BFFA57E170522AF4EEBD493504E5C85313C58F4CF5C88C9CE1F5013851027441A6E1B9A93D5C49C3337E379CA43C59185D12DBC68889D5D197E466F3193A905290B821091383"
+}
